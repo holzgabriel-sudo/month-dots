@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Month Dots Support</title>
+<meta name="description" content="Support and privacy policy for Month Dots, a macOS widget that shows the days of your month and year as dots.">
+<link rel="icon" href="icon.png">
+<style>
+  :root {
+    --bg: #f3f1ec; --card: #ffffff; --text: #1d1a16; --muted: #6a645b; --line: #e3dfd6; --accent: #c8402a;
+    --hero-a: #8a90a2; --hero-b: #4c5266;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111112; --card: #1a1a1c; --text: #ece8df; --muted: #a39d92; --line: #2a2a2d; --accent: #f0735c; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 64px; }
+  .hero {
+    background: linear-gradient(180deg, var(--hero-a), var(--hero-b)); color: #fff;
+    padding: 48px 16px 40px; text-align: center;
+  }
+  .hero img.icon { width: 96px; height: 96px; }
+  .hero h1 { font: 700 34px/1.2 -apple-system, BlinkMacSystemFont, sans-serif; margin: 12px 0 4px; letter-spacing: -0.02em; }
+  .hero p { margin: 0; color: #e2e5ee; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; }
+  .hero img.preview {
+    display: block; width: 100%; max-width: 700px; margin: 28px auto 0; border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  }
+  nav { display: flex; gap: 20px; justify-content: center; padding: 18px 0 8px; flex-wrap: wrap; }
+  nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  section {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 24px 24px 12px; margin-top: 20px;
+  }
+  h2 { font-size: 22px; margin: 0 0 12px; }
+  h3 { font-size: 17px; margin: 20px 0 4px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  .contact {
+    display: inline-block; margin: 4px 0 16px; padding: 10px 18px; border-radius: 10px;
+    background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+  }
+  kbd {
+    font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px 6px;
+    border: 1px solid var(--line); border-radius: 5px; background: var(--bg);
+  }
+  footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="icon" src="icon.png" alt="Month Dots app icon">
+  <h1>Month Dots</h1>
+  <p>Your month and year in dots.</p>
+  <img class="preview" src="preview.jpg" alt="Month Dots widgets in seven themes: Frost, Graphite, Paper, Ink, Chroma, Holo and Liquid Chrome">
+</header>
+
+<div class="wrap">
+  <nav>
+    <a href="#support">Support</a>
+    <a href="#faq">Help &amp; FAQ</a>
+    <a href="#privacy">Privacy Policy</a>
+  </nav>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p>Questions, bug reports or feature ideas? Send an email and you'll usually get a reply within a few days.</p>
+    <a class="contact" href="mailto:valentin.isaac.holz@gmail.com?subject=Month%20Dots%20Support">valentin.isaac.holz@gmail.com</a>
+    <p class="muted">Please include your macOS version and, if something looks wrong, a screenshot.</p>
+  </section>
+
+  <section id="faq">
+    <h2>Help &amp; FAQ</h2>
+
+    <h3>How do I add the widget?</h3>
+    <p>Open Month Dots once after installing it. Then right-click an empty spot on your desktop, choose
+      <strong>Edit Widgets…</strong>, search for <strong>Month Dots</strong> and drag the size you like onto the
+      desktop or into Notification Center. Small and Medium show this month; Large shows the whole year.</p>
+
+    <h3>What do the dots mean?</h3>
+    <p>Every dot is one day. Faded dots are days that have passed, solid dots are the days still ahead, and today is
+      marked with a ring in your accent color. The count includes today, so on the last day of the month it says
+      “1 day left”.</p>
+
+    <h3>How do I change the theme or colors?</h3>
+    <p>Right-click a placed widget and choose <strong>Edit “Month Dots”</strong>. There you can pick one of seven themes
+      (Frost, Graphite, Paper, Ink, Chroma, Holo and Liquid Chrome), today's accent color, and the day your week
+      starts on. Each widget keeps its own settings, so you can place several in different themes.</p>
+
+    <h3>What are “Align to weekdays” and “Hollow weekends”?</h3>
+    <p><strong>Align to weekdays</strong> lays the month out like a calendar, so each column is a weekday.
+      Otherwise the dots simply run seven to a row from the 1st. <strong>Hollow weekends</strong> draws
+      Saturdays and Sundays as rings so the weeks are easier to read.</p>
+
+    <h3>How do I see a different number?</h3>
+    <p>Click the number at the bottom of the widget to switch between days left, percent of the month (or year)
+      left, and the week and day of the year.</p>
+
+    <h3>What is the little moon?</h3>
+    <p>Today's moon phase. It's calculated on your Mac from the date, with no internet connection, and can be
+      turned off in the widget's settings.</p>
+
+    <h3>When does the widget update?</h3>
+    <p>macOS refreshes it every hour and right at midnight, when the dots move on to the new day. Widgets can't
+      animate, so today's ring stays still.</p>
+
+    <h3>The widget looks grey or monochrome.</h3>
+    <p>macOS can tone down desktop widgets while other windows are in front of them. You can change this in
+      <strong>System Settings → Desktop &amp; Dock → Widget style</strong>.</p>
+
+    <h3>How do I uninstall?</h3>
+    <p>Remove any Month Dots widgets (right-click → <strong>Remove Widget</strong>), then drag Month Dots from your
+      Applications folder to the Trash.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p class="muted">Last updated: October 20, 2026</p>
+    <p><strong>Month Dots does not collect any data.</strong> The app and its widget run entirely on your Mac.
+      They don't use analytics, tracking, advertising, accounts or network connections, and nothing you do
+      in the app is sent to the developer or to third parties.</p>
+    <p>Month Dots doesn't access your calendar, contacts, location or other personal information. The dots and the
+      moon phase are calculated from your Mac's date and time.</p>
+    <p>Your settings (such as the theme and which number the widget shows) are stored only on your Mac using the
+      standard macOS preferences system, and are removed when you delete the app.</p>
+    <p>If you email support, your message and email address are used only to reply to you and are never shared.</p>
+    <p>Questions about this policy: <a href="mailto:valentin.isaac.holz@gmail.com">valentin.isaac.holz@gmail.com</a></p>
+  </section>
+
+  <footer>© 2026 Month Dots</footer>
+</div>
+</body>
+</html>
